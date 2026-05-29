@@ -4,13 +4,18 @@
 
 .application.sheet.daggerheart.actor.dh-style.character {
     .tab.inventory {
+        padding-right: 0;
+        .search-section {
+            padding-right: 14px;
+        }
         .items-section {
             display: flex;
             flex-direction: column;
             gap: 10px;
             overflow-y: auto;
+            scrollbar-gutter: stable;
             margin-top: 20px;
-            padding-bottom: 20px;
+            padding-bottom: 4px;
             .with-scroll-shadows();
         }
     }

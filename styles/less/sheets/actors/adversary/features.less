@@ -3,14 +3,27 @@
 @import '../../../utils/mixin.less';
 
 .application.sheet.daggerheart.actor.dh-style.adversary {
-    .tab.features {
+    .tab.features.active {
+        position: relative;
+        padding-left: 15px;
         .feature-section {
             display: flex;
             flex-direction: column;
             gap: 10px;
+            padding: 6px 2px 4px 0;
             overflow-y: auto;
-            padding-bottom: 20px;
+            scrollbar-gutter: stable;
             .with-scroll-shadows();
+        }
+        > button {
+            --button-size: 1.75rem;
+            width: 1.75rem;
+            position: absolute;
+            inset: auto 16px 0 auto;
+            box-shadow: 0 0 5px @light-black;
+        }
+        &:has(> button) .feature-section {
+            padding-bottom: calc(1px + 1.75rem);
         }
     }
 }

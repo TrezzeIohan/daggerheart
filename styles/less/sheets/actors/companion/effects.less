@@ -1,13 +1,17 @@
 @import '../../../utils/colors.less';
+@import '../../../utils/mixin.less';
 
 .application.sheet.daggerheart.actor.dh-style.companion {
     .tab.effects {
+        margin-right: 2px;
+        padding-right: 0;
         .effects-sections {
             display: flex;
             flex-direction: column;
             gap: 10px;
             overflow-y: auto;
-            padding-bottom: 20px;
+            padding-bottom: 4px;
+            scrollbar-gutter: stable;
             .with-scroll-shadows();
         }
     }

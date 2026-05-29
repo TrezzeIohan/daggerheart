@@ -1,14 +1,20 @@
 <section class='tab {{tabs.features.cssClass}} {{tabs.features.id}}' data-tab='{{tabs.features.id}}'
     data-group='{{tabs.features.group}}'>
     <div class="feature-section">
-        {{> 'daggerheart.inventory-items'
-            title=tabs.features.label
-            type='feature'
-            collection=@root.features
-            hideContextMenu=true
-            hideModifyControls=true
-            canCreate=@root.editable
-            showActions=@root.editable
-        }}
+        {{#each @root.features as |item|}}
+            {{> 'daggerheart.inventory-item'
+                item=item
+                type='feature'
+                actorType=@root.document.type
+                hideContextMenu=true
+                hideModifyControls=true
+                showActions=@root.editable
+            }}
+        {{/each}}
     </div>
+    {{#if @root.editable}}
+        <button data-action="createDoc" data-document-class="Item" data-type="feature" data-tooltip="{{localize 'DOCUMENT.Create' type=(localize 'TYPES.Item.feature')}}">
+            <i class="fa-solid fa-plus icon-button"></i>
+        </button>
+    {{/if}}
 </section>

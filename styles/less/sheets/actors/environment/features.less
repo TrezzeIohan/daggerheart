@@ -4,13 +4,25 @@
 
 .application.sheet.daggerheart.actor.dh-style.environment {
     .tab.features {
+        position: relative;
         .feature-section {
             display: flex;
             flex-direction: column;
             gap: 10px;
             overflow-y: auto;
-            padding-bottom: 4px;
+            padding: 4px 8px;
+            scrollbar-gutter: stable;
             .with-scroll-shadows();
+        }
+        > button {
+            --button-size: 1.75rem;
+            width: 1.75rem;
+            position: absolute;
+            inset: auto 16px 0 auto;
+            box-shadow: 0 0 5px @light-black;
+        }
+        &:has(> button) .feature-section {
+            padding-bottom: calc(1px + 1.75rem);
         }
     }
 }

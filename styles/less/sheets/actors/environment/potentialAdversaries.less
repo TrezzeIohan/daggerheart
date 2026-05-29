@@ -1,4 +1,5 @@
 @import '../../../utils/colors.less';
+@import '../../../utils/mixin.less';
 
 .application.sheet.daggerheart.actor.dh-style.environment {
     .tab.potentialAdversaries {
@@ -7,7 +8,8 @@
             flex-direction: column;
             gap: 10px;
             overflow-y: auto;
-            padding-bottom: 4px;
+            padding: 0 4px 4px 4px;
+            scrollbar-gutter: stable;
             .with-scroll-shadows();
         }
     }
